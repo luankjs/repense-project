@@ -1,0 +1,19 @@
+<%= simple_form_for(@course, html: {class: 'form' }) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, t(:error_found)) %>:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :name, placeholder: I18n.t(:name, scope: "placeholders.course"), input_html: { pattern: "[a-zA-ZÀ-ú -]+" } %>
+  <%= f.input :description, placeholder: I18n.t(:description, scope: "placeholders.course") %>
+  <%= f.input :status, collection: Course.statuses_collection, as: :select, prompt: I18n.t(:choose_one), selected: (@course.status ? @course.status : 1) %>
+
+  <%= f.button :submit, class: "btn-default" %>
+<% end %>

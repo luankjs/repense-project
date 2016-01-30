@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to t(:edit, scope: "commons.unisex", model: t(:course, scope: "activerecord.models")), edit_course_path(@course) %> |
+<%= link_to t(:back), courses_path %>
+
+<h3>
+	<small><%= t(:name, scope: "activerecord.attributes.course") %></small><br>
+	<%= @course.name %>
+</h3>
+<h3>
+	<small><%= t(:description, scope: "activerecord.attributes.course") %></small><br>
+	<%= @course.description %>
+</h3>
+<h3>
+	<small><%= t(:status, scope: "activerecord.attributes.course") %></small><br>
+	<span class="label label-<%= (@course.status == 1 ? "success" : "danger") %>"><%= @course.status_str %></span>
+</h3>
