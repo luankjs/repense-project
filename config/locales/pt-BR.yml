@@ -11,12 +11,17 @@ pt-BR:
     models:
         course: "Curso"
         student: "Estudante"
+        classroom: "Matrícula"
 
     attributes:
         student:
           name: "Nome"
           register_number: "Número de registro"
           status: "Status"
+        classroom:
+          student_id: "Estudante"
+          course_id: "Curso"
+          entry_at: "Matriculado em"
         course:
           name: "Nome"
           description: "Descrição"
@@ -26,6 +31,9 @@ pt-BR:
     student:
       name: "Insira seu nome"
       register_number: "Insira um número para registro"
+    classroom:
+      student_id: "Escolha um estudante"
+      course_id: "Escolha um curso"
     course:
       name: "Insira seu nome"
       description: "Insira uma descrição para o curso"

@@ -1,0 +1,22 @@
+<h1><%= t(:new, scope: "commons.female", model: t(:classroom, scope: 'activerecord.models')) %></h1>
+
+<%= simple_form_for(@classroom, html: {class: 'form' }) do |f| %>
+  <% if @classroom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@classroom.errors.count, t(:error_found)) %>:</h2>
+
+      <ul>
+      <% @classroom.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :student_id, collection: Student.all, as: :select, prompt: I18n.t(:student_id, scope: "placeholders.classroom") %>
+  <%= f.input :course_id, collection: Course.all, as: :select, prompt: I18n.t(:course_id, scope: "placeholders.classroom") %>
+
+  <%= f.button :submit, class: "btn-default" %>
+<% end %>
+
+<%= link_to t(:back), classrooms_path %>

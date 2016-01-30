@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t(:list, scope: "commons.unisex", model: t(:classroom, scope: "activerecord.models").pluralize) %></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t(:student_id, scope: "activerecord.attributes.classroom") %></th>
+      <th><%= t(:course_id, scope: "activerecord.attributes.classroom") %></th>
+      <th><%= t(:entry_at, scope: "activerecord.attributes.classroom") %></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classrooms.each do |classroom| %>
+      <tr>
+        <td><%= classroom.student.name %></td>
+        <td><%= classroom.course.name %></td>
+        <td><%= l classroom.entry_at %></td>
+        <td><%= link_to t(:show), classroom %></td>
+        <td><%= link_to t(:destroy), classroom, method: :delete, data: { confirm: t(:are_you_sure?) } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(:new, scope: "commons.female", model: t(:classroom, scope: "activerecord.models")), new_classroom_path %>
