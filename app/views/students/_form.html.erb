@@ -12,7 +12,7 @@
   <% end %>
 
   <%= f.input :name, placeholder: I18n.t(:name, scope: "placeholders.student"), input_html: { pattern: "[a-zA-Z ]+" } %>
-  <%= f.input :register_number, placeholder: I18n.t(:register_number, scope: "placeholders.student") %>
+  <%= f.input :register_number, placeholder: I18n.t(:register_number, scope: "placeholders.student"), input_html: { pattern: "[0-9]+" } %>
   <%= f.input :status, collection: Student.statuses_collection, as: :select, prompt: I18n.t(:choose_one), selected: (@student.status ? @student.status : 1) %>
 
   <%= f.button :submit, class: "btn-default" %>
