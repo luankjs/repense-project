@@ -8,19 +8,26 @@ pt-BR:
 
   activerecord:
     models:
+        course: "Curso"
         student: "Estudante"
 
     attributes:
         student:
-            name: "Nome"
-            register_number: "Número de registro"
-            status: "Status"
+          name: "Nome"
+          register_number: "Número de registro"
+          status: "Status"
+        course:
+          name: "Nome"
+          description: "Descrição"
+          status: "Status"
 
   placeholders:
     student:
       name: "Insira seu nome"
       register_number: "Insira um número para registro"
-      status: "Ativo?"
+    course:
+      name: "Insira seu nome"
+      description: "Insira uma descrição para o curso"
 
   student_statuses:
     active: "Ativo"
