@@ -17,7 +17,7 @@ class Student < ActiveRecord::Base
     statuses_collection = []
 
     STUDENT_STATUSES.each_pair do |key, value|
-        statuses_collection << [value, key]
+        statuses_collection << [I18n.t(value, scope: "student_statuses"), key]
     end
 
     return statuses_collection
