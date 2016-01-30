@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :classrooms, only: [:index, :new, :create, :destroy]
   resources :courses
   resources :students
 
