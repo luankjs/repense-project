@@ -20,10 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 pt-BR:
-  created: "%{model} cadastrado com sucesso"
-  updated: "%{model} atualizado com sucesso"
-  removed: "%{model} removido com sucesso"
-
   date:
     abbr_day_names:
     - Dom
