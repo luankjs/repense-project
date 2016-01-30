@@ -1,4 +1,4 @@
-<%= form_for(@student) do |f| %>
+<%= simple_form_for(@student, html: {class: 'form' }, defaults: { input_html: { class: "form-control" } }) do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -11,7 +11,9 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :name, placeholder: I18n.t(:name, scope: "placeholders.student") %>
+  <%= f.input :register_number, placeholder: I18n.t(:register_number, scope: "placeholders.student") %>
+  <%= f.input :status, collection: Student.statuses_collection, as: :select, prompt: I18n.t(:choose_one), selected: 1 %>
+
+  <%= f.button :submit, class: "btn-default" %>
 <% end %>

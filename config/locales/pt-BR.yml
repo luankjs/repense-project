@@ -1,4 +1,22 @@
 pt-BR:
+  choose_one: Escolha um...
+
+  activerecord:
+    models:
+        student: "Estudante"
+
+    attributes:
+        student:
+            name: "Nome"
+            register_number: "Número de registro"
+            status: "Status"
+
+  placeholders:
+    student:
+      name: "Insira seu nome"
+      register_number: "Insira um número para registro"
+      status: "Ativo?"
+
   student_statuses:
-    active: Ativo
-    inactive: Inativo
+    active: "Ativo"
+    inactive: "Inativo"
