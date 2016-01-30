@@ -1,0 +1,4 @@
+pt-BR:
+  student_statuses:
+    active: Ativo
+    inactive: Inativo
