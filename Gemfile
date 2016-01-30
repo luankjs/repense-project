@@ -9,6 +9,7 @@ gem 'jbuilder', 												'~> 2.0'
 
 # Application
 gem 'pg'
+gem 'simple_form'
 
 # Assets
 gem 'jquery-rails'
