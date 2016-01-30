@@ -5,11 +5,21 @@ class Student < ActiveRecord::Base
 	validates_inclusion_of :status, :in => [0,1]
 
   STUDENT_STATUSES = {
-  	0 => :inactive
+  	0 => :inactive,
     1 => :active
   }
 
   def status_str
     I18n.t(STUDENT_STATUSES[self.status], scope: "student_statuses")
+  end
+
+  def self.statuses_collection
+    statuses_collection = []
+
+    STUDENT_STATUSES.each_pair do |key, value|
+        statuses_collection << [value, key]
+    end
+
+    return statuses_collection
   end
 end
