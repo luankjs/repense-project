@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to t(:edit, scope: "commons.unisex", model: t(:student, scope: "activerecord.models")), edit_student_path(@student) %> |
+<%= link_to t(:back), students_path %>
+
+<h3>
+	<small><%= t(:name, scope: "activerecord.attributes.student") %></small><br>
+	<%= @student.name %>
+</h3>
+<h3>
+	<small><%= t(:register_number, scope: "activerecord.attributes.student") %></small><br>
+	<%= @student.register_number %>
+</h3>
+<h3>
+	<small><%= t(:status, scope: "activerecord.attributes.student") %></small><br>
+	<span class="label label-<%= (@student.status == 1 ? "success" : "danger") %>"><%= @student.status_str %></span>
+</h3>

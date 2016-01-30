@@ -1,5 +1,10 @@
 pt-BR:
-  choose_one: Escolha um...
+  back: "Voltar"
+  choose_one: "Escolha um..."
+  error_found: "erro encontrado"
+  show: "Mostrar"
+  edit: "Edit"
+  destroy: "Apagar"
 
   activerecord:
     models:
@@ -20,3 +25,13 @@ pt-BR:
   student_statuses:
     active: "Ativo"
     inactive: "Inativo"
+
+  commons:
+    male:
+      new: "Novo %{model}"
+    female:
+      new: "Nova %{model}"
+    unisex:
+      list: "Lista de %{model}"
+      edit: "Editar %{model}"
+      editing: "Editando %{model}"

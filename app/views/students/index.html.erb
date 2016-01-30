@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Students</h1>
+<h1><%= t(:list, scope: "commons.unisex", model: t(:student, scope: "activerecord.models").pluralize) %></h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
+      <th><%= t(:name, scope: "activerecord.attributes.student") %></th>
+      <th><%= t(:register_number, scope: "activerecord.attributes.student") %></th>
+      <th><%= t(:status, scope: "activerecord.attributes.student") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +15,12 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= student.name %></td>
+        <td><%= student.register_number %></td>
+        <td><span class="label label-<%= (student.status == 1 ? "success" : "danger") %>"><%= student.status_str %></span></td>
+        <td><%= link_to t(:show), student %></td>
+        <td><%= link_to t(:edit), edit_student_path(student) %></td>
+        <td><%= link_to t(:destroy), student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to t(:new, scope: "commons.male", model: t(:student, scope: "activerecord.models")), new_student_path %>
