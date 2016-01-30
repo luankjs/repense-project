@@ -57,8 +57,8 @@ RSpec.describe Student, type: :model do
   	end
 
   	it "when call statuses_collection" do
-  		expect(Student.statuses_collection).to include([:active, 1])
-  		expect(Student.statuses_collection).to include([:inactive, 0])
+  		expect(Student.statuses_collection).to include(["Ativo", 1])
+  		expect(Student.statuses_collection).to include(["Inativo", 0])
   	end
   end
 end
