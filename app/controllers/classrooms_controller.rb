@@ -1,4 +1,6 @@
 class ClassroomsController < ApplicationController
+  before_action :set_collections, only: [:new]
+
   def index
     @classrooms = Classroom.all
   end
@@ -31,5 +33,10 @@ class ClassroomsController < ApplicationController
   private
   	def classroom_params
       params.require(:classroom).permit(:student_id, :course_id)
+    end
+
+    def set_collections
+      @students = Student.all
+      @courses = Course.all
     end
 end

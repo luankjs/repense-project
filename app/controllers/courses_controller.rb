@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_collections, only: [:new, :edit]
 
   # GET /courses
   def index
@@ -63,5 +64,9 @@ class CoursesController < ApplicationController
 
     def course_params
       params.require(:course).permit(:name, :description, :status)
+    end
+
+    def set_collections
+      @course_statuses = Course.statuses_collection
     end
 end

@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_collections, only: [:new, :edit]
 
   # GET /students
   def index
@@ -63,5 +64,9 @@ class StudentsController < ApplicationController
 
     def student_params
       params.require(:student).permit(:name, :register_number, :status)
+    end
+
+    def set_collections
+      @student_statuses = Student.statuses_collection
     end
 end

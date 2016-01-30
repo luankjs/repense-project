@@ -13,7 +13,7 @@
 
   <%= f.input :name, placeholder: I18n.t(:name, scope: "placeholders.course"), input_html: { pattern: "[a-zA-ZÀ-ú -]+" } %>
   <%= f.input :description, placeholder: I18n.t(:description, scope: "placeholders.course") %>
-  <%= f.input :status, collection: Course.statuses_collection, as: :select, prompt: I18n.t(:choose_one), selected: (@course.status ? @course.status : 1) %>
+  <%= f.input :status, collection: @course_statuses, as: :select, prompt: I18n.t(:choose_one), selected: (@course.status ? @course.status : 1) %>
 
   <%= f.button :submit, class: "btn-default" %>
 <% end %>

@@ -13,8 +13,8 @@
     </div>
   <% end %>
 
-  <%= f.input :student_id, collection: Student.all, as: :select, prompt: I18n.t(:student_id, scope: "placeholders.classroom") %>
-  <%= f.input :course_id, collection: Course.all, as: :select, prompt: I18n.t(:course_id, scope: "placeholders.classroom") %>
+  <%= f.input :student_id, collection: @students, as: :select, prompt: I18n.t(:student_id, scope: "placeholders.classroom") %>
+  <%= f.input :course_id, collection: @courses, as: :select, prompt: I18n.t(:course_id, scope: "placeholders.classroom") %>
 
   <%= f.button :submit, class: "btn-default" %>
 <% end %>
