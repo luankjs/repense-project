@@ -51,7 +51,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_url, notice: I18n.t(:removed, model: I18n.t(:student, scope: "activerecord.models")) }
+      format.html { redirect_to students_url, notice: I18n.t(:deleted, model: I18n.t(:student, scope: "activerecord.models")) }
       format.json { head :no_content }
     end
   end
