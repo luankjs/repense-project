@@ -2,13 +2,11 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students
-  # GET /students.json
   def index
     @students = Student.all
   end
 
   # GET /students/1
-  # GET /students/1.json
   def show
   end
 
@@ -22,13 +20,12 @@ class StudentsController < ApplicationController
   end
 
   # POST /students
-  # POST /students.json
   def create
     @student = Student.new(student_params)
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
+        format.html { redirect_to @student, notice: I18n.t(:created, model: I18n.t(:student, scope: "activerecord.models")) }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
@@ -38,11 +35,10 @@ class StudentsController < ApplicationController
   end
 
   # PATCH/PUT /students/1
-  # PATCH/PUT /students/1.json
   def update
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+        format.html { redirect_to @student, notice: I18n.t(:updated, model: I18n.t(:student, scope: "activerecord.models")) }
         format.json { render :show, status: :ok, location: @student }
       else
         format.html { render :edit }
@@ -52,11 +48,10 @@ class StudentsController < ApplicationController
   end
 
   # DELETE /students/1
-  # DELETE /students/1.json
   def destroy
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
+      format.html { redirect_to students_url, notice: I18n.t(:removed, model: I18n.t(:student, scope: "activerecord.models")) }
       format.json { head :no_content }
     end
   end
