@@ -35,7 +35,7 @@ pt-BR:
       student_id: "Escolha um estudante"
       course_id: "Escolha um curso"
     course:
-      name: "Insira seu nome"
+      name: "Insira um nome para o curso"
       description: "Insira uma descrição para o curso"
 
   student_statuses:

@@ -14,7 +14,7 @@ class ClassroomsController < ApplicationController
 
   	respond_to do |format|
   		if @classroom.save
-        format.html { redirect_to @classroom, notice: I18n.t(:created, model: I18n.t(:classroom, scope: "activerecord.models")) }
+        format.html { redirect_to classrooms_path, notice: I18n.t(:created, model: I18n.t(:classroom, scope: "activerecord.models")) }
       else
         format.html { render :new }
       end
