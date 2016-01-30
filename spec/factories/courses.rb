@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :course do
-    name "MyString"
-description "MyString"
-status 1
+    name "Course Name"
+		description "Course Description"
+		status 1
   end
 
 end

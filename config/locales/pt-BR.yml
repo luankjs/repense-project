@@ -26,6 +26,10 @@ pt-BR:
     active: "Ativo"
     inactive: "Inativo"
 
+  course_statuses:
+    active: "Ativo"
+    inactive: "Inativo"
+
   commons:
     male:
       new: "Novo %{model}"
