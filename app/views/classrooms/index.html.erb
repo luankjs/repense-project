@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t(:list, scope: "commons.unisex", model: t(:classroom, scope: "activerecord.models").pluralize) %></h1>
+<h1 class="page-header">
+  <%= t(:list, scope: "commons.unisex", model: t(:classroom, scope: "activerecord.models").pluralize) %>
+  <small><%= link_to t(:new, scope: "commons.female", model: t(:classroom, scope: "activerecord.models")), new_classroom_path, class: "btn btn-primary pull-right" %></small>
+</h1>
 
 <table class="table table-striped">
   <thead>
@@ -24,7 +27,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to t(:new, scope: "commons.female", model: t(:classroom, scope: "activerecord.models")), new_classroom_path %>

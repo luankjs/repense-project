@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to t(:edit, scope: "commons.unisex", model: t(:student, scope: "activerecord.models")), edit_student_path(@student) %> |
-<%= link_to t(:back), students_path %>
+<h1 class="page-header">
+	<%= t(:view, scope: "commons.unisex", model: t(:course, scope: "activerecord.models")) %>
+	<%= link_to t(:edit, scope: "commons.unisex", model: t(:student, scope: "activerecord.models")), edit_student_path(@student), class: "btn btn-primary pull-right" %>
+	<%= link_to t(:back), students_path, class: "btn btn-primary pull-right margin-right-10" %>
+</h1>
 
 <h3>
 	<small><%= t(:name, scope: "activerecord.attributes.student") %></small><br>

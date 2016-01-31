@@ -1,5 +1,7 @@
-<h1><%= t(:new, scope: "commons.male", model: t(:course, scope: 'activerecord.models')) %></h1>
+<h1 class="page-header">
+	<%= t(:new, scope: "commons.male", model: t(:course, scope: 'activerecord.models')) %>
+	<%= link_to t(:back), courses_path, class: "btn btn-primary pull-right" %>
+</h1>
 
 <%= render 'form' %>
 
-<%= link_to t(:back), courses_path %>
