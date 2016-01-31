@@ -26,7 +26,7 @@ class ClassroomsController < ApplicationController
   	@classroom.destroy
 
     respond_to do |format|
-      format.html { redirect_to students_url, notice: I18n.t(:deleted, model: I18n.t(:student, scope: "activerecord.models")) }
+      format.html { redirect_to classrooms_url, notice: I18n.t(:deleted, model: I18n.t(:student, scope: "activerecord.models")) }
     end
   end
 
