@@ -8,6 +8,12 @@ pt-BR:
   destroy: "Apagar"
 
   activerecord:
+    errors:
+      models:
+        classroom:
+          attributes:
+            course: 
+              already_registered: Este aluno já está matriculado nesta disciplina.
     models:
         course: "Curso"
         student: "Estudante"
