@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.input :name, placeholder: I18n.t(:name, scope: "placeholders.student"), input_html: { pattern: "[a-zA-Z ]+" } %>
+  <%= f.input :name, placeholder: I18n.t(:name, scope: "placeholders.student"), input_html: { pattern: "[a-zA-ZÀ-ú -]+" } %>
   <%= f.input :register_number, placeholder: I18n.t(:register_number, scope: "placeholders.student"), input_html: { pattern: "[0-9]+" } %>
   <%= f.input :status, collection: @student_statuses, as: :select, prompt: I18n.t(:choose_one), selected: (@student.status ? @student.status : 1) %>
 
